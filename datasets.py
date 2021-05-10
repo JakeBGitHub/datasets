@@ -399,14 +399,14 @@ def get_v2_metadata(id):
     if md['namespace'] == 'org.healthdatagateway':
       if md['key'] == "structuralMetadata":
         metadata.append(([md['key']], md['value']))
-      try:
-        key = str(md['key'].split('properties/')[1])
-        keys = key.split("/")
-        metadata.append((keys, md['value']))
-      except:
-        key = str(md['key'])
-        keys = key.split("/")
-        metadata.append((keys, md['value']))
+#       try:
+      key = str(md['key'].split('properties/')[1])
+      keys = key.split("/")
+      metadata.append((keys, md['value']))
+#       except:
+#         key = str(md['key'])
+#         keys = key.split("/")
+#         metadata.append((keys, md['value']))
 
   return metadata
 
